@@ -17,13 +17,13 @@ pipeline {
             checkout scm
          }
       }
-    //  stage('build') {
-    //     steps {
-    //        // Get some code from a GitHub repository
-    //              script {
-    //      app = docker.build(registry)
-    //    }
-    //     }
-    //  }
+      stage('build') {
+         steps {
+            // Get some code from a GitHub repository
+                  script {
+          app = docker.build(registry)
+        }
+         }
+      }
    }
 }
