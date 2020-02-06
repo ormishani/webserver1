@@ -12,10 +12,11 @@ pipeline {
 				echo "hello world"
 			}
 		}
-		stage('build') {
+		stage('build and upload') {
 			steps {
 				script {
 					app = docker.build(registry)
+					docker push ormishani2020/webserver:app
 				}
 			}
 		}
