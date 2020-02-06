@@ -4,6 +4,7 @@ pipeline {
 	environment {
 		registry = "ormishani2020/webserver"
 		registryCredential = 'DockerHub'
+		app = ""
 	}
 
 	stages {
@@ -12,12 +13,19 @@ pipeline {
 				echo "hello world"
 			}
 		}
-		stage('build and upload') {
+		stage('build') {
 			steps {
 				script {
-					def app = docker.build("ormishani2020/webserver:${env.BUILD_ID}")
-					app.push()
+					app = docker.build("ormishani2020/webserver:${env.BUILD_ID}")
 				}
+			}
+		}
+		stage('upload image') {
+			steps {
+				script {
+				  docker.withRegistry( '', registryCredential ) {
+					app.push()
+				  }
 			}
 		}
 	}
