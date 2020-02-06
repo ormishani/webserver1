@@ -12,19 +12,18 @@ pipeline {
 				echo "hello world"
 			}
 		}
-    //  stage('Webhook') {
-    //     steps {
-    //        // Get some code from a GitHub repository
-    //        git 'https://github.com/ormishani/webserver1.git'
-    //     }
-    //  }
-    //  stage('build') {
-    //     steps {
-    //        // Get some code from a GitHub repository
-    //              script {
-    //      docker.build registry + ":$BUILD_NUMBER"
-    //    }
-    //     }
-    //  }
+      stage('Clone repository') {
+         steps {        
+            checkout scm
+         }
+      }
+      stage('build') {
+         steps {
+            // Get some code from a GitHub repository
+                  script {
+          app = docker.build(registry)
+        }
+         }
+      }
    }
 }
