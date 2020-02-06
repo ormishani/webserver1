@@ -15,8 +15,8 @@ pipeline {
 		stage('build and upload') {
 			steps {
 				script {
-					app = docker.build(registry)
-					docker push ormishani2020/webserver:app
+					def app = docker.build("ormishani2020/webserver:${env.BUILD_ID}")
+					app.push()
 				}
 			}
 		}

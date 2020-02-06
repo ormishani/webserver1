@@ -16,7 +16,7 @@ pipeline {
 			steps {
 				script {
 					app = docker.build(registry)
-					docker push ormishani2020/webserver:1
+					docker push ormishani2020/webserver:app
 				}
 			}
 		}
