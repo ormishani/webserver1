@@ -7,17 +7,12 @@ pipeline {
   }
 
    stages {
-		stage("echo"){
-			steps { 
-				echo "hello world"
-			}
-		}
-    //  stage('Webhook') {
-    //     steps {
-    //        // Get some code from a GitHub repository
-    //        git 'https://github.com/ormishani/webserver1.git'
-    //     }
-    //  }
+      stage('Webhook') {
+         steps {
+            // Get some code from a GitHub repository
+            git 'https://github.com/ormishani/webserver1.git'
+         }
+      }
     //  stage('build') {
     //     steps {
     //        // Get some code from a GitHub repository
