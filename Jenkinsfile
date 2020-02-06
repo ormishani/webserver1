@@ -12,11 +12,6 @@ pipeline {
 				echo "hello world"
 			}
 		}
-		stage('Clone repository') {
-			steps {
-				checkout scm
-			}
-		}
 		stage('build') {
 			steps {
 				script {
