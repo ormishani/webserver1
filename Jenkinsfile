@@ -29,10 +29,5 @@ pipeline {
 				}
 			}
 		}
-		stage('upload image') {
-			steps {
-				
-			}
-		}
 	}
 }
