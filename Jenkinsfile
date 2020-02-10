@@ -10,7 +10,7 @@ pipeline {
 	stages {
 		stage("echo") {
 			steps {
-				echo "hello world"
+				echo "hello world1"
 			}
 		}
 		stage('build') {
@@ -26,8 +26,13 @@ pipeline {
 				  docker.withRegistry( '', registryCredential ) {
 					app.push()
 				  }
+				}
 			}
 		}
-	}
+		stage('upload image') {
+			steps {
+				
+			}
+		}
 	}
 }
