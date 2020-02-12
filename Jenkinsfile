@@ -16,7 +16,7 @@ pipeline {
 		stage('build') {
 			steps {
 				script {
-					app = docker.build("ormishani2020/webserver:${env.BUILD_ID}")
+					app = docker.build("ormishani2020/webserver:latest")
 				}
 			}
 		}
