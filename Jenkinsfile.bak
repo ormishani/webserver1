@@ -28,6 +28,11 @@ pipeline {
 				  }
 				}
 			}
-		}	
+		}
+		stage('test
+			steps {
+				sh "k get pods"
+			}
+		}			
 	}
 }
