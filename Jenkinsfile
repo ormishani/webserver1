@@ -29,7 +29,7 @@ pipeline {
 				}
 			}
 		}
-		stage('test)
+		stage('test){
 			steps {
 				sh "k get pods"
 			}
