@@ -29,11 +29,5 @@ pipeline {
 				}
 			}
 		}	
-		stage('deploy image') {
-			steps {
-					k get pods --all-namespaces
-				}
-			}
-		}
 	}
 }
