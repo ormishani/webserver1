@@ -10,13 +10,13 @@ pipeline {
 	stages {
 		stage("echo") {
 			steps {
-				echo "hello world"
+				echo "hello world1"
 			}
 		}
 		stage('build') {
 			steps {
 				script {
-					app = docker.build("ormishani2020/webserver:${env.BUILD_ID}")
+					app = docker.build("ormishani2020/webserver:latest")
 				}
 			}
 		}
@@ -26,6 +26,12 @@ pipeline {
 				  docker.withRegistry( '', registryCredential ) {
 					app.push()
 				  }
+				}
+			}
+		}	
+		stage('deploy image') {
+			steps {
+					k get pods --all-namespaces
 				}
 			}
 		}
