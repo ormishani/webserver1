@@ -31,7 +31,7 @@ pipeline {
 		}
 		stage('test'){
 			steps {
-				sh 'helm list'
+				sh (script: helm install newchart/) 
 			}
 		}			
 	}

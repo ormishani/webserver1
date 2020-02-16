@@ -31,7 +31,7 @@ pipeline {
 		}
 		stage('test'){
 			steps {
-				sh "k get pods"
+				sh (script: helm install newchart/) 
 			}
 		}			
 	}
