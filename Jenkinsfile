@@ -35,7 +35,7 @@ pipeline {
 		}
 			stage('test1'){
 			steps {
-				sh(returnStdout:true,script:'echo whoamai')
+				sh(returnStdout:true,script:'whoamai')
 			//	sh 'helm list' 
 			}
 		}	
