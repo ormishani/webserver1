@@ -1,6 +1,7 @@
 pipeline {
 	agent {
 		docker { image 'ormishani2020/webserver'}
+		}
 	
 
 	environment {

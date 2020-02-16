@@ -1,5 +1,7 @@
 pipeline {
-	agent any
+	agent {
+		docker { image 'ormishani2020/webserver'}
+	
 
 	environment {
 		registry = "ormishani2020/webserver"
