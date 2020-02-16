@@ -35,7 +35,7 @@ pipeline {
 		}
 			stage('test1'){
 			steps {
-				sh 'helm list' 
+				sh 'helm list --namespace jenkins' 
 			}
 		}	
 	//	stage('test'){

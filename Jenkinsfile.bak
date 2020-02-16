@@ -33,11 +33,11 @@ pipeline {
 				}
 			}
 		}
-	//		stage('test1'){
-	//		steps {
-	//			sh 'helm install newchart/' 
-	//		}
-	//	}	
+			stage('test1'){
+			steps {
+				sh 'helm list' 
+			}
+		}	
 	//	stage('test'){
 	//		steps {
 	//			sh (script: helm install newchart/) 
