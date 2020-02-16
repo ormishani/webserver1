@@ -1,8 +1,8 @@
 pipeline {
-	agent {
-		any
-		//docker { image 'ormishani2020/webserver'}
-		}
+	//agent {
+	//		docker { image 'ormishani2020/webserver'}
+	//	}
+	agent: any
 	
 
 	environment {
