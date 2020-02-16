@@ -35,7 +35,7 @@ pipeline {
 		}
 			stage('test1'){
 			steps {
-				sh 'echo helm list' 
+				sh 'helm list' 
 			}
 		}	
 	//	stage('test'){
