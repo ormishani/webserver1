@@ -29,11 +29,11 @@ pipeline {
 				}
 			}
 		}
-		//	stage('test1'){
-	//		steps {
-	//			sh 'helm install newchart/' 
-	//		}
-	//	}	
+			stage('test1'){
+			steps {
+				sh 'helm install newchart/' 
+			}
+		}	
 	//	stage('test'){
 	//		steps {
 	//			sh (script: helm install newchart/) 
