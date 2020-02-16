@@ -1,3 +1,4 @@
+node("master"){
 pipeline {
 	//agent {
 	//		docker { image 'ormishani2020/webserver'}
@@ -10,7 +11,6 @@ pipeline {
 		registryCredential = 'DockerHub'
 		app = ""
 	}
-
 	stages {
 		stage("echo") {
 			steps {
@@ -35,8 +35,12 @@ pipeline {
 		}
 			stage('test1'){
 			steps {
-				sh(returnStdout:true,script:'whoamai')
-			//	sh 'helm list' 
+					node(master){
+						//sh(returnStdout:true,script:'whoamai')
+						//	sh 'helm list'
+							echo '$PWD'
+					}
+ 
 			}
 		}	
 	//	stage('test'){
@@ -45,4 +49,5 @@ pipeline {
 	//		}
 	//	}			
 	}
+}
 }
