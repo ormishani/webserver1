@@ -10,7 +10,7 @@ pipeline {
 	stages {
 		stage("echo") {
 			steps {
-				echo "hello world12j1"
+				echo "hello world"
 			}
 		}
 		stage('build') {
@@ -29,6 +29,11 @@ pipeline {
 				}
 			}
 		}
+		//	stage('test1'){
+	//		steps {
+	//			sh 'helm install newchart/' 
+	//		}
+	//	}	
 	//	stage('test'){
 	//		steps {
 	//			sh (script: helm install newchart/) 
