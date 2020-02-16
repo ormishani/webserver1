@@ -29,10 +29,10 @@ pipeline {
 				}
 			}
 		}
-		stage('test'){
-			steps {
-				sh (script: helm install newchart/) 
-			}
-		}			
+	#	stage('test'){
+	#		steps {
+	#			sh (script: helm install newchart/) 
+	#		}
+	#	}			
 	}
 }
