@@ -13,7 +13,7 @@ podTemplate(
             image: 'docker:18.02',
             ttyEnabled: true,
             command: 'cat'
-    ],
+    )],
     volumes: [
         hostPathVolume(
             hostPath: '/var/run/docker.sock',
