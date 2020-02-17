@@ -1,5 +1,4 @@
 pipeline {
-    node("master"){
         //agent {
         //		docker { image 'ormishani2020/webserver'}
         //	}
@@ -31,15 +30,5 @@ pipeline {
                     }
                 }
             }
-            stage('test1'){
-                steps {
-                    node(master){
-                        //sh(returnStdout:true,script:'whoamai')
-                        //	sh 'helm list'
-                            echo '$PWD'
-                        }
-                }
-            }
-        }
-    }
+       }
 }
