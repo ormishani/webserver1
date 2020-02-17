@@ -1,5 +1,5 @@
-node("master"){
-    pipeline {
+pipeline {
+    node("master"){
         //agent {
         //		docker { image 'ormishani2020/webserver'}
         //	}
