@@ -41,7 +41,7 @@ podTemplate(
         }
         stage ('Deploy') {
             container ('helm') {
-                sh "/helm repo list"
+                sh "/helm install --name python stable/dask"
             }
         }
     }
