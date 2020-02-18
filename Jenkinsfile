@@ -28,11 +28,14 @@ podTemplate(
             checkout scm
             commitId = sh(script: 'git rev-parse --short HEAD', returnStdout: true).trim()
         }
-        stage ('Build') {
+        stage ('Build and upload image') {
             container ('docker') {
                 app = ""
                 script {
                     app = docker.build("ormishani2020/webserver:latest")
+                    docker.withRegistry( '', 'DockerHub') {
+                        app.push()
+                    }
                 }
             }
         }
