@@ -1,3 +1,17 @@
+# Default values for newchart.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: ormishani2020/webserver
+  tag: latest
+  pullPolicy: IfNotPresent
+
+  imagePullSecrets:
+          name:regcred
+nameOverride: ""
 fullnameOverride: ""
 
 service:
