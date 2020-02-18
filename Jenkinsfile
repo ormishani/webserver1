@@ -28,24 +28,24 @@ podTemplate(
             checkout scm
             commitId = sh(script: 'git rev-parse --short HEAD', returnStdout: true).trim()
         }
-        stage ('Build and upload image') {
-            container ('docker') {
-                app = ""
-                script {
-                    def registryIp = sh(script: 'getent hosts registry.kube-system | awk \'{ print $1 ; exit }\'', returnStdout: true).trim()
-                    repository = "${registryIp}:80/hello"
-                    echo repository
-                    app = docker.build("ormishani2020/webserver:latest")
-                    docker.withRegistry( '', 'DockerHub') {
-                        app.push()
-                    }
-                }
-            }
-        }
+ //       stage ('Build and upload image') {
+ //           container ('docker') {
+ //               app = ""
+ //               script {
+ //                   def registryIp = sh(script: 'getent hosts registry.kube-system | awk \'{ print $1 ; exit }\'', returnStdout: true).trim()
+ //                   repository = "${registryIp}:80/hello"
+ //                   echo repository
+ //                   app = docker.build("ormishani2020/webserver:latest")
+ //                   docker.withRegistry( '', 'DockerHub') {
+ //                      app.push()
+ //                   }
+ //               }
+ //           }
+ //       }
         stage ('Deploy') {
             container ('helm') {
                 sh "/helm init --client-only --skip-refresh"
-                sh "/helm install --name python --set image.repository='https://kubernetes-charts.storage.googleapis.com' stable/dask"
+                sh "/helm upgrade --install --wait webserver newchart"
             }
 
         }
