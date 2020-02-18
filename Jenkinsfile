@@ -45,8 +45,9 @@ podTemplate(
         stage ('Deploy') {
             container ('helm') {
                 sh "/helm init --client-only --skip-refresh"
-                sh "/helm install --name python stable/dask"
+                sh "/helm install --name python --set image.repository='https://kubernetes-charts.storage.googleapis.com' stable/dask"
             }
+
         }
     }
 }
