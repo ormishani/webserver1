@@ -7,7 +7,7 @@ podTemplate(
             image: 'docker:stable',
             ttyEnabled: true,
             command: 'cat'
-        )
+        ),
         containerTemplate(
             name: 'helm',
             image: 'ibmcom/k8s-helm:v2.6.0',
