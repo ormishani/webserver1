@@ -32,6 +32,9 @@ podTemplate(
             container ('docker') {
                 app = ""
                 script {
+                    def registryIp = sh(script: 'getent hosts registry.kube-system | awk \'{ print $1 ; exit }\'', returnStdout: true).trim()
+                    repository = "${registryIp}:80/hello"
+                    printf repository
                     app = docker.build("ormishani2020/webserver:latest")
                     docker.withRegistry( '', 'DockerHub') {
                         app.push()
