@@ -26,7 +26,7 @@ podTemplate(
         stage ('Deploy') {
             container ('helm') {
                 sh "/helm init --client-only --skip-refresh"
-                sh "/helm upgrade --install --wait tomcat charts/tomcat"
+                sh "/helm upgrade --install --wait webserver charts/webserver"
             }
 
         }
