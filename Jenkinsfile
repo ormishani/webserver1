@@ -39,5 +39,10 @@ podTemplate(
                 }
             }
         }
+        stage ('Deploy') {
+            container ('helm') {
+                sh "/helm install --name webserver newchart/"
+            }
+        }
     }
 }
