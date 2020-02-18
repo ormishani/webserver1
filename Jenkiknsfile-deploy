@@ -27,7 +27,7 @@ podTemplate(
             container ('helm') {
                 sh "/helm init --client-only --skip-refresh"
                 sh "/helm create chart1"
-              //  sh "/helm upgrade --install --wait chart1 chart1"
+                sh "/helm upgrade --install --wait chart1 chart1"
             }
 
         }
